@@ -1,0 +1,26 @@
+CREAR MI REPOSITORIO EN GIT:
+
+EN GIT HUB:
+creo mi repositorio en github y le pongo el nombre de mi proyecto
+
+EN GIT BASH:
+me paro en mi carpeta del proyecto y pongo los siguientes codigos:
+-git init (crea un repo vacio en donde estoy parado)
+-git remote add origin linkDeMiRepo (me conecta la carpeta con el repositorio)
+-git add . (me aniade todos los archivos nuevos o modificados al push)
+-git commit -m "informacion del push"
+-git push origin master (me agrega o me modifica los archivos cambiados en mi carpeta de repo)
+
+
+CLONAR EL REPO DEL CURSO
+EN GIT BASH:
+-git clone https://github.com/jongibaut/PWA-2021.git (clona el repo del curso en una carpeta nueva)
+
+
+PARA ACTUALIZAR EL REPO:
+(en la carpeta clonada)
+-git init
+-git remote add origin https://github.com/jongibaut/PWA-2021.git (UNA SOLA VEZ)
+-git pull origin master (me desarga todos los archivos actualizados)
+
+
