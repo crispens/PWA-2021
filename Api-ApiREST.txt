@@ -1,0 +1,22 @@
+API ---> Application Program Interface, consume una app con datos ya esta desarrollada por otra/s persona/s
+Api REST ---> REST es una arquitectura de sobre como estan distribuidos los componentes (carpetas, si hay verificacion)
+
+Status de applicationes: 
+200 ---> OK
+300 ---> OK + en cache
+401 ---> unauthorized
+404 ---> Not Faund
+500 ---> Errores del Servidor
+
+Formas de envio de informacion: 
+GET(muestra informacion), POST(crea nueva informacion), PUT(actualizar informacion), DELETE(Borrar informacion)
+SELECT, INSERT INTO, UPDATE, DELETE
+
+envio por URL:
+/character  me accede a todos los personajes
+/character/1  me accede al personaje con id = 1
+/character?id=1 
+
+
+para un POST tengo que pasar la url de destino
+para un PUT, para un DELETE o para un GET single, yo tengo que pasar la url + el id 
