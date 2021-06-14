@@ -3,11 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//const dotenv = require('dotenv');
 
+//dotenv.config(); //antes que las rutas 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productosRouter = require('./routes/productos');
 const noticiasRouter = require('./routes/noticias');
+const productsRouter = require('./routes/products');
+const categoriasRouter = require('./routes/categorias');
+const usuariosRouter = require('./routes/usuarios');
+const personas = require('./routes/personas');
 
 var app = express();
 
@@ -25,6 +31,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter);
 app.use('/noticias', noticiasRouter);
+app.use('/products', productsRouter);
+app.use('/categorias', categoriasRouter);
+app.use('/usuarios', usuariosRouter);
+app.use('/personas', personas);
 
 
 // catch 404 and forward to error handler
