@@ -1,12 +1,12 @@
 const fs = require('fs');
-const privateKey = fs.readFileSync('./keys/private.pem');
+const publicKey = fs.readFileSync('./keys/public.pem');
 const JWT = require('jsonwebtoken');
 
 
 const logeado = (req, res, next) => {
     try {
         const {authorization} = req.headers;
-        const {id} = JWT.verify(authorization, privateKey);
+        const {id} = JWT.verify(authorization, publicKey);
         req.id = id;
         next();
         // req.headers.authorization

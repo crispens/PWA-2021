@@ -3,10 +3,10 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const sha1 = require('sha1');
-const publicKey = fs.readFileSync('./keys/public.pem');
-const singOptions = {expiresIn:"1h"};
+const privateKey = fs.readFileSync('./keys/private.pem');
+const singOptions = {algorithm: 'RS256', expiresIn:"1h"};
 const model = require('./../models/auth');
-const createToken = (payload) => jwt.sign(payload, publicKey, singOptions);
+const createToken = (payload) => jwt.sign(payload, privateKey, singOptions);
 
 
 const auth = async (req, res) => {
@@ -21,6 +21,7 @@ const auth = async (req, res) => {
         if (!user.habilitado) res.send("Verifique su mail 📧");
         if (user.habilitado) {
             const token = createToken({id: user.id,});
+            console.log(token);
             res.status(200).json({JWT : token, info: user});
         }
     } catch (e) {

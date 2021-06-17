@@ -6,7 +6,8 @@ const schemas = {
         username: Joi.string().required(),
         pass: Joi.string().min(8).required().messages({
             "string.min" : "La password debe tener al menor 8 caracteres"
-        })
+        }),
+        mail: Joi.string().email({ tlds: { allow: false} }).required(),
     }),
 
     modify : Joi.object().keys({
@@ -14,7 +15,8 @@ const schemas = {
         username: Joi.string().optional(),
         pass: Joi.string().min(8).optional().messages({
             "string.min" : "La password debe tener al menor 8 caracteres"
-        })
+        }),
+        mail: Joi.string().email({ tlds: { allow: false} }).optional(),
     })
 }
 
