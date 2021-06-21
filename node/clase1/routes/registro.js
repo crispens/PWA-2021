@@ -20,7 +20,7 @@ const create = async (req, res) => {
         const newUser = await model.create(nuevo);
         const mailinfo = {
             to: mail,
-            subject: "Gracias por registrarte !!",
+            subject: "Gracias por registrarte 😀!!",
             html: `<a href = "${process.env.URL}/users/verify/${nuevo.confirmacionCorreo}" >Link magico de registro para ${username}</a>`
         }
         const mensaje = await send(mailinfo);
