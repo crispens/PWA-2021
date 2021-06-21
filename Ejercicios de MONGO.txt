@@ -1,0 +1,25 @@
+Hacer su propia collection productos, con al menos 10 productos y que tengan minimo nombre, precio, stock, descripcion, ts_create y ts_update:
+
+-Mostrar todos productos con stock > 0.
+    db.productos.find({stock : {$gt : 0}}).pretty()
+
+-Cambiar el precio a 1500 de los productos con stock menor a 10.
+    db.productos.updateMany({stock : {$lt : 10}}, {$set : {precio : 1500}})
+
+-Borrar todos los producto cons stock 0.
+    db.productos.deleteMany({stock : 0})
+
+-Borrar ek binbre dek cuarto producto.
+    db.productos.updateOne({_id : ObjectId("60d0ed08fd35058b7c653a0d")}, {$unset : {nombre : ''}})
+
+-Mostrar y cambiar el nombre a "1" de todos los productos con precio >= 1000.
+    db.productos.updateMany({precio : {$gte : 1000}}, {$set : {nombre : "1"}})
+
+-Cambiar el precio a 200 en los productos con stock mayoy o igual a 50.
+    db.productos.updateMany({stock : {$gte : 50}}, {$set : {precio : 200}})
+
+-Mostrar todos los productos con stock mayor a 0 y precio menor a 100.
+    db.productos.find({stock : {$gt : 0}, precio : {$lt : 100}}).pretty()
+
+-Borrar todos los prroductos con nombre = "pantalon" o precio = 700. 
+    db.productos.deleteMany({$or : [{nombre : "pantalon", precio : 700}]})

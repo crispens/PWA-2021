@@ -16,6 +16,7 @@ const saveFile = (file, allowExtension , destFolder = "./public/images") => {
             throw "No se puede eliminar";
         }
     });
+    // unlink me borra el archivo temporal creado
     return uid; 
     }
     catch(e) {
