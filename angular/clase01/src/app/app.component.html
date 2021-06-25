@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+<h1>Bienvenido a Angular</h1>
+<div class="container">
+<div class="row justify-content-center mt-5">
+<div class="col-6">
+    <input type="text" class= "form-control" placeholder="nombres" name="nombres" (input) = "Input($event)">
+</div>
+<div class="col-12">
+    <button type = "button" class="btn btn-primary" (click) = "clickeado()">APRETAMEE!</button>
+    <br>
+    {{mensajeSecreto}}
+</div>
+<div class="col-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Sueldo</th>
+                <th>Antiguedad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let empleado of empleados'>
+                <td>{{empleado.id}}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.sueldo | currency: 'ARS'}}</td>
+                <td *ngIf = 'empleado.antiguedad > 2; else menorDos'>{{empleado.antiguedad}}</td>
+            <!--    <td *ngIf = 'empleado.antiguedad <= 2'>Tiene menos de dos anios de antiguedad</td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Mail</th>
+                <th>Pass</th>
+            </tr>
+        </thead>
+        <tbody *ngFor = 'let usuario of usuarios'>
+            <tr *ngIf = "usuario.edad >= 18">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.apellido}}</td>
+                <td>{{usuario.edad}}</td>
+                <td>{{usuario.mail}}</td>
+                <td>{{usuario.pass}}</td>
+            </tr>    
+        </tbody> 
+<!--        <tbody>
+            <tr *ngFor = 'let usuario of usuarios'>
+                <td *ngIf = "usuario.edad >= 18">{{usuario.id}}</td>
+                <td *ngIf = "usuario.edad >= 18">{{usuario.nombre}}</td>
+                <td *ngIf = "usuario.edad >= 18">{{usuario.apellido}}</td>
+                <td *ngIf = "usuario.edad >= 18">{{usuario.edad}}</td>
+                <td *ngIf = "usuario.edad >= 18">{{usuario.mail}}</td>
+                <td *ngIf = "usuario.edad >= 18">{{usuario.pass}}</td>
+            </tr>    
+        </tbody>         -->
+    </table>
+</div>
+
+<div class="col-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Mail</th>
+                <th>Pass</th>
+            </tr>
+        </thead>
+        <tbody *ngFor = 'let usuario of usuarios'>
+            <tr *ngIf = "usuario.edad < 18">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.apellido}}</td>
+                <td>{{usuario.edad}}</td>
+                <td>{{usuario.mail}}</td>
+                <td>{{usuario.pass}}</td>
+            </tr>    
+        </tbody> 
+<!--        <tbody>
+            <tr *ngFor = 'let usuario of usuarios'>
+                <td *ngIf = "usuario.edad < 18">{{usuario.id}}</td>
+                <td *ngIf = "usuario.edad < 18">{{usuario.nombre}}</td>
+                <td *ngIf = "usuario.edad < 18">{{usuario.apellido}}</td>
+                <td *ngIf = "usuario.edad < 18">{{usuario.edad}}</td>
+                <td *ngIf = "usuario.edad < 18">{{usuario.mail}}</td>
+                <td *ngIf = "usuario.edad < 18">{{usuario.pass}}</td>
+            </tr>    
+        </tbody>         -->
+    </table>
+</div>
+
+</div>
+</div>
+
+<ng-template #menorDos>
+<td>Tiene menos de dos anios de antiguedad</td>
+</ng-template>
+
+<app-footer></app-footer>
