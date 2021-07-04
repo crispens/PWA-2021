@@ -2,7 +2,7 @@ const bd = require('../utils/bd');
 const bdService = require("../utils/dbService");
 
 
-const getAll = () => bd('producto as P').join('categorias as CAT', 'CAT.id', 'P.id_categoria').where({"P.habilitado" : 1}).select('P.nombre', 'CAT.nombre as nombreCategoria', 'P.precio', 'P.stock');
+const getAll = () => bd('producto AS P').join('categorias AS CAT', 'CAT.id', 'P.id_categoria').where({"P.habilitado" : true}).select('P.id','P.nombre', 'CAT.nombre AS nombreCategoria', 'P.precio', 'P.stock');
     // SELECT * FORM producto WHERE habilitado = 1
     // where en knex puede ser por objeto o escrito ({habilitado : 1}, ("habilitado", 1))
 

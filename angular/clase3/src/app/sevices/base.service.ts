@@ -8,7 +8,7 @@ import { environment } from './../../environments/environment';
   providedIn: 'root'
 })
 export class BaseService {
-  urlServer: string = environment.url;
+  urlServer: string = environment.url || 'http://localhost:3000' ;
   endpoint: string = '';
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -38,16 +38,16 @@ export class BaseService {
   async get() {
     try {
       return await this.http.get(`${this.urlServer}/${this.endpoint}`, this.HttpOptions()).toPromise();
-    }catch (e) {
-      this.handlerError(e);
+    } catch (e) {
+      return this.handlerError(e);
     }
   }
 
   async post(obj: any) {
     try {
       return await this.http.post(`${this.urlServer}/${this.endpoint}`, obj, this.HttpOptions()).toPromise();
-    }catch (e) {
-      this.handlerError(e);
+    } catch (e) {
+      return this.handlerError(e);
     }
   }
 

@@ -5,16 +5,13 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class SwalService {
-  normalMessage({html, icon, timer}: any){
+  normalMessage({ html, icon, timer }: any){
     Swal.fire({
       html,
       icon: icon || 'success',
       showConfirmButton : true,
       timer : 3000,
-
-    })
-    
+    }) 
   }
 
-  constructor() { }
 }
