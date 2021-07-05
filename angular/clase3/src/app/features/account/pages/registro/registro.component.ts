@@ -17,7 +17,7 @@ export class RegistroComponent implements OnInit {
   formObject: any = {
     username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
     pass: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]),
-    mail: new FormControl('', [Validators.email, ]),
+    mail: new FormControl('', [Validators.email, Validators.required, Validators.minLength(5)]),
 
   }
 
@@ -32,7 +32,7 @@ export class RegistroComponent implements OnInit {
     try {
     const result : any = await this.service.new(this.form.value);
     console.log(result);
-    this. swal.normalMessage({ html: 'Registrado, verifique su mail 📧' , timer: 3000 /*serian 3 segundos*/});
+    this.swal.normalMessage({ html: 'Registrado, verifique su mail 📧' , timer: 3000 /*serian 3 segundos*/});
     this.router.navigate(['login']);
     } 
     catch (e) {
