@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <form [formGroup]="form">
+
+                <div class="form-grop mt-4">
+                    <input type="text" placeholder="Nombre:" class="form-control" formControlName= "nombre">
+                </div>
+
+                <div class="form-grop mt-4">
+                    <input type="text" placeholder="Apellido:" class="form-control" formControlName= "apellido">
+                </div>
+
+                <div class="form-grop mt-4">
+                    <input type="file" class="form-control" (change)="onFileSelected($event)">
+                </div>
+                
+                <div *ngIf = "imagen">
+                <img [src]="previewUrl" class="mt-3" style= "width: 150px; height: 100px;">
+                </div>
+
+                <button type="button" (click)="upload()" [disabled]= "form.invalid" class="btn btn-primary mt-3">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
