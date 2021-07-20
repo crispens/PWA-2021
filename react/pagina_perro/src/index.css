@@ -1,0 +1,48 @@
+* {
+ margin: 0px;
+ padding: 0px;
+ box-sizing: border-box;
+}
+
+.perro {
+    max-height: 500px;
+    max-width: 500px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perro_imagen {
+    height: 400px;
+    width: 400px;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonA {
+    height: 50px;
+    width: 100px;
+    background-color: azure;
+    border-radius: 15px;
+    border: 2px solid black;
+    margin: 7px;
+}
+
+.papapa {
+    height: 30px;
+    width: 40px;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+
+.imagen {
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+    
+}
