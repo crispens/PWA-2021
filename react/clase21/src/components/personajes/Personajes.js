@@ -1,5 +1,5 @@
 import React from 'react';
-import useGet from '../../utils/useHTTP';
+import { useGet } from '../../utils/useHTTP';
 
 
 const Personajes = () => {
@@ -26,9 +26,6 @@ const Personajes = () => {
             </div>
         </>
     );
-}
+};
  
 export default Personajes;
-
-
-
